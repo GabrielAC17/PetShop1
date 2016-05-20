@@ -1,5 +1,9 @@
-#include "login.h"
+#include <stdio.h>
+#include <stdlib.h>
+
 #include "scanfp.h"
+#include "structs.h"
+#include "vari.h"
 
 bool vendLogin() 
 {
@@ -17,8 +21,12 @@ bool vendLogin()
 		free(tmp_vende);
 		vende_sz++;
 	}
-	scanfPointer(vende[0].nome);
-	printf("%s",vende[0].nome);
 
+	vende[0].salario = 1000.50;
+	vende[0].comissao = 10;
+	vende[0].numero = 0;
+	strscan(vende[0].nome);
+
+	printf("%.2f %d %d %s",vende[0].salario,vende[0].numero,vende[0].comissao, vende[0].nome);
 	return true;
 }

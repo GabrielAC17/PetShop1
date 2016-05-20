@@ -22,6 +22,7 @@
     <ClInclude Include="login.h" />
     <ClInclude Include="scanfp.h" />
     <ClInclude Include="structs.h" />
+    <ClInclude Include="vari.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Login.cpp" />

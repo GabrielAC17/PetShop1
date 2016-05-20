@@ -5,7 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void scanfPointer(char * texto)
+void strscan(char * texto)
 {
 	int tamanho = 0;
 	char aux;
@@ -16,6 +16,10 @@ void scanfPointer(char * texto)
 		if (aux == '\n')
 			break;
 		texto = (char*)realloc(texto, (tamanho + 1) * sizeof(char));
+		if (texto == NULL) {
+			printf("Deu ruim!");
+		}
+
 		texto[tamanho] = aux;
 		tamanho++;
 	} while (true);
