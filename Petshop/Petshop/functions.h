@@ -3,6 +3,9 @@
  **********************************************************************/
 
 
+#ifndef _FUNCTIONS.H_
+#define _FUNCTIONS.H_
+
 /*====================================================================*
  *                      FUNÇÕES DE AUXILIARES                         *
  *====================================================================*/
@@ -12,16 +15,17 @@
  *     endereco de memoria.
  */
 
-char * receber_string(char * string)
+char * receberString()
 {
 	int size = 0;
 	char temporary;
+	char * string = NULL;
 
-string = (char *) malloc(size);
+	string = (char *)malloc(size);
 
 	while (true)
 	{
-		scanf("%c", temporary);
+		scanf("%c", &temporary);
 
 		string = (char *)realloc(string, (size + 1) * sizeof(char));
 
@@ -60,5 +64,7 @@ void cadastrar_produto(PRODUTO * produto)
 	printf("Insira o preço do produto: ");
 	scanf("%f", &produto->
 }
+
+#endif
 
 /*--------------------------------------------------------------------*/
