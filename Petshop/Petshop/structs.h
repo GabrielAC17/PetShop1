@@ -12,13 +12,15 @@
  *====================================================================*/
 
 
-#ifndef _STRUCTS.H_
-#define _STRUCTS.H_
+#ifndef _STRUCTS_H_
+#define _STRUCTS_H_
+
+#include <stdint.h>
 
 typedef struct telefone
 {
 	uint8_t  cod_area;
-	uint16_t prefixo
+	uint16_t prefixo;
 	uint16_t sufixo;
 } TELEFONE;
 
