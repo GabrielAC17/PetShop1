@@ -18,22 +18,16 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stdafx.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="targetver.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="functions.h">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="structs.h">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="structs.h">
+      <Filter>Header Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
