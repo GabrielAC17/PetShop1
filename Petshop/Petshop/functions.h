@@ -34,24 +34,19 @@ extern unsigned int comp_sz = 0;
  *     endereco de memoria.
  */
 
-char * receber_string(char * string)
+char * receberString()
 {
 	int size = 0;
 	char temporary;
+	char * string = NULL;
 
 	string = (char *)malloc(size);
-	if (string == NULL) {
-		printf("Deu ruim!");
-	}
 
 	while (true)
 	{
 		scanf("%c", &temporary);
 
 		string = (char *)realloc(string, (size + 1) * sizeof(char));
-		if (string == NULL) {
-			printf("Deu ruim!");
-		}
 
 		if (temporary == '\n')
 		{
@@ -60,6 +55,7 @@ char * receber_string(char * string)
 		}
 		else
 			string[size] = temporary;
+
 		size++;
 	}
 }
