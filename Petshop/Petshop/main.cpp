@@ -9,7 +9,8 @@
 #include "functions.h"
 
 bool login();
-char * receber_string(char * string);
+//char * receberString();
+//vendedor * alocarVende();
 
 int main() {
 	setlocale(LC_CTYPE, "");
@@ -19,20 +20,22 @@ int main() {
 
 bool login() 
 {
-	if (vende_sz == 0) 
+	if (vende_sz == 0)
 	{
 		//Testes de depuração
-		alocar_vende(vende);
+		alocarVende(vende);
 		
 		vende[0].salario = 666.66;
 		vende[0].numero = 1;
 		vende[0].comissao = 22;
-		vende[0].nome = receber_string(vende[0].nome);
+		
+		vende[0].nome = receberString();
 		printf("%s", vende[0].nome);
 
-		//Erro ao alocar uma segunda vez
-		alocar_vende(vende);
-		vende[1].nome = receber_string(vende[1].nome);
+		alocarVende(vende);
+
+		vende[1].nome = receberString();
+		printf("%s", vende[1].nome);
 
 		return true;
 	}

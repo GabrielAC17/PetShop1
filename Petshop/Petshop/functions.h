@@ -65,23 +65,23 @@ char * receberString()
 	em caso de problemas
 */
 
-bool alocar_vende(vendedor * vende)
+vendedor * alocarVende(vendedor * vende)
 {
-	vendedor * tmpVende = (vendedor *) 
+	vendedor * tmpVende = (vendedor *)
 		realloc(vende, sizeof(vendedor)* vende_sz+1);
 
 	if (tmpVende == NULL)
 	{
 		printf("\nAlocação de vendedor falhou.\n");
-		free(tmpVende);
-		return false;
+		//free(tmpVende);
+		return vende;
 	}
 	else
 	{
 		vende = tmpVende;
-		free(tmpVende);
+		//free(tmpVende);
 		vende_sz++;
-		return true;
+		return vende;
 	}
 }
 
@@ -93,13 +93,13 @@ bool alocar_prod(produto * prod)
 	if (tmpProd == NULL) 
 	{
 		printf("\nAlocação de produto falhou.\n");
-		free(tmpProd);
+		//free(tmpProd);
 		return false;
 	}
 	else
 	{
 		prod = tmpProd;
-		free(tmpProd);
+		//free(tmpProd);
 		prod_sz++;
 		return true;
 	}
@@ -113,13 +113,13 @@ bool alocar_forn(fornecedor * forn)
 	if (tmpForn == NULL)
 	{
 		printf("\nAlocação de fornecedor falhou.\n");
-		free(tmpForn);
+		//free(tmpForn);
 		return false;
 	}
 	else
 	{
 		forn = tmpForn;
-		free(tmpForn);
+		//free(tmpForn);
 		forn_sz++;
 		return true;
 	}
@@ -133,13 +133,13 @@ bool alocar_vend(venda * vend)
 	if (tmpVend == NULL)
 	{
 		printf("\nAlocação de venda falhou.\n");
-		free(tmpVend);
+		//free(tmpVend);
 		return false;
 	}
 	else
 	{
 		vend = tmpVend;
-		free(tmpVend);
+		//free(tmpVend);
 		vend_sz++;
 		return true;
 	}
@@ -153,13 +153,13 @@ bool alocar_comp(compra * comp)
 	if (tmpComp == NULL)
 	{
 		printf("\nAlocação de compra falhou.\n");
-		free(tmpComp);
+		//free(tmpComp);
 		return false;
 	}
 	else
 	{
 		comp = tmpComp;
-		free(tmpComp);
+		//free(tmpComp);
 		comp_sz++;
 		return true;
 	}
