@@ -22,6 +22,12 @@ int main() {
 	return 0;
 }
 
+/*--------------------------------------------------------------------*/
+
+/*====================================================================*
+*                       FUNÇÃO DE LOGIN                               *
+*====================================================================*/
+
 void login() 
 {
 	unsigned int op;
@@ -64,7 +70,14 @@ void login()
 	return;
 }
 
+/*--------------------------------------------------------------------*/
 
+/*====================================================================*
+*                       FUNÇÕES DE MENU                               *
+*====================================================================*/
+
+/* 1. Menu principal - Tudo retorna aqui.
+*/
 
 void menu() 
 {
@@ -109,6 +122,9 @@ void menu()
 		|| opcaoSel1 != 4 || opcaoSel1 != 5 || opcaoSel1 != 6);
 }
 
+/* 2. Sub-Menu Cadastro - Com opção de retornar ao menu principal.
+*/
+
 void menuCadastro()
 {
 	int opcaoSel1;
@@ -139,6 +155,11 @@ void menuCadastro()
 	} while (opcaoSel1 != 1 || opcaoSel1 != 2 || opcaoSel1 != 3
 		|| opcaoSel1 != 4);
 }
+
+/* 3. Sub-Menu Consulta - Com opção de retornar ao menu principal.
+*    Pode criar várias funções para cada consulta ou uma passando
+	 Parâmetros de entrada.
+*/
 
 void menuConsulta()
 {
