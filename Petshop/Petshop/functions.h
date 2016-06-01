@@ -1,30 +1,28 @@
-/**********************************************************************
- * FUNÇÕES DO PROGRAMA petshop.c                                      *
- **********************************************************************/
-
 #ifndef _FUNCTIONS_H_
 #define _FUNCTIONS_H_
+
+
+/**********************************************************************
+ * FUNÇÕES DO PROGRAMA main.cpp                                       *
+ **********************************************************************/
 
  /*====================================================================*
  *                      DECLARAÇÕES DE VARIÁVEIS                       *
  *====================================================================*/
 
+unsigned int n_produtos;
 
-extern unsigned int n_produtos;
+vendedor		* vende = (vendedor *)malloc(0);
+produto		* prod = (produto *)malloc(0);
+fornecedor	* forn = (fornecedor *)malloc(0);
+venda		* vend = (venda *)malloc(0);
+compra		* comp = (compra *)malloc(0);
 
-extern vendedor		* vende = (vendedor *)malloc(0);
-extern produto		* prod = (produto *)malloc(0);
-extern fornecedor	* forn = (fornecedor *)malloc(0);
-extern venda		* vend = (venda *)malloc(0);
-extern compra		* comp = (compra *)malloc(0);
-
-extern unsigned int vende_sz = 0;
-extern unsigned int prod_sz = 0;
-extern unsigned int forn_sz = 0;
-extern unsigned int vend_sz = 0;
-extern unsigned int comp_sz = 0;
-
-#endif
+unsigned int vende_sz = 0;
+unsigned int prod_sz = 0;
+unsigned int forn_sz = 0;
+unsigned int vend_sz = 0;
+unsigned int comp_sz = 0;
 
 /*====================================================================*
  *                      FUNÇÕES DE AUXILIARES                         *
@@ -32,10 +30,10 @@ extern unsigned int comp_sz = 0;
 
 
 /* 1. Receber string -- Recebe string do usuario e retorna seu
- *    endereco de memoria.
+ *     endereco de memoria.
  */
 
-char * receberString()
+inline char * receberString()
 {
 	int size = 0;
 	char temporary;
@@ -62,105 +60,105 @@ char * receberString()
 }
 
 /* 2. Alocações dos structs - Recebe um ponteiro de struct e aloca
- *	  o espaço necessário. Retorna true caso de sucesso ou false 
- *	  em caso de problemas
- */
+*	o espaço necessário. Retorna true caso de sucesso ou false 
+	em caso de problemas
+*/
 
-bool alocar_vende(vendedor * vende)
+inline bool alocarVende()
 {
-	vendedor * tmpVende = (vendedor *) 
-		realloc(vende, sizeof(vendedor)* vende_sz+1);
+	vendedor * tmpVende = (vendedor *)
+		realloc(vende, sizeof(vendedor) * (vende_sz+1));
 
 	if (tmpVende == NULL)
 	{
 		printf("\nAlocação de vendedor falhou.\n");
-		free(tmpVende);
+		//free(tmpVende);
 		return false;
 	}
 	else
 	{
 		vende = tmpVende;
-		free(tmpVende);
+		//free(tmpVende);
 		vende_sz++;
 		return true;
 	}
 }
 
-bool alocar_prod(produto * prod)
+inline bool alocar_prod()
 {
 	produto * tmpProd = (produto *) 
-		realloc(prod,sizeof(produto)* prod_sz+1);
+		realloc(prod,sizeof(produto)* (prod_sz+1));
 
 	if (tmpProd == NULL) 
 	{
 		printf("\nAlocação de produto falhou.\n");
-		free(tmpProd);
+		//free(tmpProd);
 		return false;
 	}
 	else
 	{
 		prod = tmpProd;
-		free(tmpProd);
+		//free(tmpProd);
 		prod_sz++;
 		return true;
 	}
 }
 
-bool alocar_forn(fornecedor * forn)
+inline bool alocar_forn()
 {
 	fornecedor * tmpForn = (fornecedor *)
-		realloc(forn, sizeof(fornecedor)* forn_sz + 1);
+		realloc(forn, sizeof(fornecedor)* (forn_sz + 1));
 
 	if (tmpForn == NULL)
 	{
 		printf("\nAlocação de fornecedor falhou.\n");
-		free(tmpForn);
+		//free(tmpForn);
 		return false;
 	}
 	else
 	{
 		forn = tmpForn;
-		free(tmpForn);
+		//free(tmpForn);
 		forn_sz++;
 		return true;
 	}
 }
 
-bool alocar_vend(venda * vend)
+inline bool alocar_vend()
 {
 	venda * tmpVend = (venda *)
-		realloc(vend, sizeof(venda)* vend_sz + 1);
+		realloc(vend, sizeof(venda)* (vend_sz + 1));
 
 	if (tmpVend == NULL)
 	{
 		printf("\nAlocação de venda falhou.\n");
-		free(tmpVend);
+		//free(tmpVend);
 		return false;
 	}
 	else
 	{
 		vend = tmpVend;
-		free(tmpVend);
+		//free(tmpVend);
 		vend_sz++;
 		return true;
 	}
 }
 
-bool alocar_comp(compra * comp)
+inline bool alocar_comp()
 {
 	compra * tmpComp = (compra *)
-		realloc(comp, sizeof(compra)* comp_sz + 1);
+		realloc(comp, sizeof(compra)* (comp_sz + 1));
 
 	if (tmpComp == NULL)
 	{
 		printf("\nAlocação de compra falhou.\n");
-		free(tmpComp);
+		//free(tmpComp);
 		return false;
 	}
 	else
 	{
 		comp = tmpComp;
-		free(tmpComp);
+		//free(tmpComp);
 		comp_sz++;
 		return true;
 	}
@@ -193,3 +191,5 @@ void cadastrar_produto(PRODUTO * produto)
 
 
 /*--------------------------------------------------------------------*/
+
+#endif
