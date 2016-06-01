@@ -2,12 +2,13 @@
  * FUNÇÕES DO PROGRAMA petshop.c                                      *
  **********************************************************************/
 
+#ifndef _FUNCTIONS_H_
+#define _FUNCTIONS_H_
+
  /*====================================================================*
  *                      DECLARAÇÕES DE VARIÁVEIS                       *
  *====================================================================*/
 
-#ifndef _FUNCTIONS_H_
-#define _FUNCTIONS_H_
 
 extern unsigned int n_produtos;
 
@@ -31,7 +32,7 @@ extern unsigned int comp_sz = 0;
 
 
 /* 1. Receber string -- Recebe string do usuario e retorna seu
- *     endereco de memoria.
+ *    endereco de memoria.
  */
 
 char * receberString()
@@ -61,9 +62,9 @@ char * receberString()
 }
 
 /* 2. Alocações dos structs - Recebe um ponteiro de struct e aloca
-*	o espaço necessário. Retorna true caso de sucesso ou false 
-	em caso de problemas
-*/
+ *	  o espaço necessário. Retorna true caso de sucesso ou false 
+ *	  em caso de problemas
+ */
 
 bool alocar_vende(vendedor * vende)
 {
