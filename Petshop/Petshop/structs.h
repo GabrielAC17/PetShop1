@@ -17,13 +17,6 @@
 
 #include <stdint.h>
 
-typedef struct telefone
-{
-	uint8_t  cod_area;
-	uint16_t prefixo;
-	uint16_t sufixo;
-} TELEFONE;
-
 typedef struct data
 {
 	uint8_t  dia, mes;
@@ -61,7 +54,7 @@ typedef struct fornecedor
 {
 	unsigned int numero; // numero identificador (campo chave)
 	char *       nome;
-	telefone     fone;
+	char *       telefone;
 } FORNECEDOR;
 
 typedef struct venda

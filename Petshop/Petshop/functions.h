@@ -1,22 +1,22 @@
-#ifndef _FUNCTIONS_H_
-#define _FUNCTIONS_H_
-
-
 /**********************************************************************
  * FUNÇÕES DO PROGRAMA main.cpp                                       *
  **********************************************************************/
 
+#ifndef _FUNCTIONS_H_
+#define _FUNCTIONS_H_
+
+
  /*====================================================================*
- *                      DECLARAÇÕES DE VARIÁVEIS                       *
- *====================================================================*/
+  *                      DECLARAÇÕES DE VARIÁVEIS                      *
+  *====================================================================*/
 
 unsigned int n_produtos;
 
-vendedor		* vende = (vendedor *)malloc(0);
-produto		* prod = (produto *)malloc(0);
-fornecedor	* forn = (fornecedor *)malloc(0);
-venda		* vend = (venda *)malloc(0);
-compra		* comp = (compra *)malloc(0);
+vendedor	* vende = (vendedor *)   malloc(0);
+produto		* prod =  (produto *)    malloc(0);
+fornecedor	* forn =  (fornecedor *) malloc(0);
+venda		* vend =  (venda *)      malloc(0);
+compra		* comp =  (compra *)     malloc(0);
 
 unsigned int vende_sz = 0;
 unsigned int prod_sz = 0;
@@ -29,9 +29,10 @@ unsigned int comp_sz = 0;
  *====================================================================*/
 
 
-/* 1. Receber string -- Recebe string do usuario e retorna seu
- *     endereco de memoria.
- */
+/********************************************************************** 
+ * 1. Receber string -- Recebe string do usuario e retorna seu        *
+ *     endereco de memoria.                                           *
+ **********************************************************************/
 
 inline char * receberString()
 {
