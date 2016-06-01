@@ -34,7 +34,7 @@ extern unsigned int comp_sz = 0;
  *     endereco de memoria.
  */
 
-char * receberString()
+inline char * receberString()
 {
 	int size = 0;
 	char temporary;
@@ -65,30 +65,30 @@ char * receberString()
 	em caso de problemas
 */
 
-vendedor * alocarVende(vendedor * vende)
+inline bool alocarVende(vendedor * vende)
 {
 	vendedor * tmpVende = (vendedor *)
-		realloc(vende, sizeof(vendedor)* vende_sz+1);
+		realloc(vende, sizeof(vendedor) * (vende_sz+1));
 
 	if (tmpVende == NULL)
 	{
 		printf("\nAlocação de vendedor falhou.\n");
 		//free(tmpVende);
-		return vende;
+		return false;
 	}
 	else
 	{
 		vende = tmpVende;
 		//free(tmpVende);
 		vende_sz++;
-		return vende;
+		return true;
 	}
 }
 
-bool alocar_prod(produto * prod)
+inline bool alocar_prod(produto * prod)
 {
 	produto * tmpProd = (produto *) 
-		realloc(prod,sizeof(produto)* prod_sz+1);
+		realloc(prod,sizeof(produto)* (prod_sz+1));
 
 	if (tmpProd == NULL) 
 	{
@@ -105,10 +105,10 @@ bool alocar_prod(produto * prod)
 	}
 }
 
-bool alocar_forn(fornecedor * forn)
+inline bool alocar_forn(fornecedor * forn)
 {
 	fornecedor * tmpForn = (fornecedor *)
-		realloc(forn, sizeof(fornecedor)* forn_sz + 1);
+		realloc(forn, sizeof(fornecedor)* (forn_sz + 1));
 
 	if (tmpForn == NULL)
 	{
@@ -125,10 +125,10 @@ bool alocar_forn(fornecedor * forn)
 	}
 }
 
-bool alocar_vend(venda * vend)
+inline bool alocar_vend(venda * vend)
 {
 	venda * tmpVend = (venda *)
-		realloc(vend, sizeof(venda)* vend_sz + 1);
+		realloc(vend, sizeof(venda)* (vend_sz + 1));
 
 	if (tmpVend == NULL)
 	{
@@ -145,10 +145,10 @@ bool alocar_vend(venda * vend)
 	}
 }
 
-bool alocar_comp(compra * comp)
+inline bool alocar_comp(compra * comp)
 {
 	compra * tmpComp = (compra *)
-		realloc(comp, sizeof(compra)* comp_sz + 1);
+		realloc(comp, sizeof(compra)* (comp_sz + 1));
 
 	if (tmpComp == NULL)
 	{

@@ -25,7 +25,7 @@ bool login()
 		//Testes de depuração
 		alocarVende(vende);
 		
-		vende[0].salario = 666.66;
+		vende[0].salario = 666;
 		vende[0].numero = 1;
 		vende[0].comissao = 22;
 		
@@ -40,3 +40,4 @@ bool login()
 		return true;
 	}
 }
+
