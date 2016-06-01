@@ -20,24 +20,39 @@ int main() {
 
 bool login() 
 {
+	unsigned int op;
+
 	if (vende_sz == 0)
 	{
-		//Testes de depuração
-		alocarVende();
-		
-		vende[0].salario = 666;
-		vende[0].numero = 1;
-		vende[0].comissao = 22;
-		
-		vende[0].nome = receberString();
-		printf("%s", vende[0].nome);
-
 		alocarVende();
 
-		vende[1].nome = receberString();
-		printf("%s", vende[1].nome);
+		vende[0].salario = 0;
+		vende[0].numero = 0;
+		vende[0].comissao = 0;
 
-		return true;
+		vende[0].nome = (char *)malloc(4 * sizeof(char));
+		strcpy(vende[0].nome, "root");
 	}
+
+	do
+	{
+		system("cls");
+		printf("Digite o número correspondente ao usuário desejado:\n");
+		
+		for (int i = 0; i < vende_sz; i++)
+		{
+			printf("Usuário: %s\nNúmero: %d\n\n",vende[i].nome, vende[i].numero);
+		}
+
+		setbuf(stdin, NULL);
+		scanf("%d", &op);
+
+		if (op >= 0 && op < vende_sz) {
+			break;
+		}
+
+	} while (true);
+
+	return true;
 }
 

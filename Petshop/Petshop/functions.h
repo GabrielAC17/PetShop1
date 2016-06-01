@@ -24,8 +24,6 @@ unsigned int forn_sz = 0;
 unsigned int vend_sz = 0;
 unsigned int comp_sz = 0;
 
-
-
 /*====================================================================*
  *                      FUNÇÕES DE AUXILIARES                         *
  *====================================================================*/
@@ -86,7 +84,7 @@ inline bool alocarVende()
 	}
 }
 
-inline bool alocar_prod(produto * prod)
+inline bool alocar_prod()
 {
 	produto * tmpProd = (produto *) 
 		realloc(prod,sizeof(produto)* (prod_sz+1));
@@ -106,7 +104,7 @@ inline bool alocar_prod(produto * prod)
 	}
 }
 
-inline bool alocar_forn(fornecedor * forn)
+inline bool alocar_forn()
 {
 	fornecedor * tmpForn = (fornecedor *)
 		realloc(forn, sizeof(fornecedor)* (forn_sz + 1));
@@ -126,7 +124,7 @@ inline bool alocar_forn(fornecedor * forn)
 	}
 }
 
-inline bool alocar_vend(venda * vend)
+inline bool alocar_vend()
 {
 	venda * tmpVend = (venda *)
 		realloc(vend, sizeof(venda)* (vend_sz + 1));
@@ -146,7 +144,7 @@ inline bool alocar_vend(venda * vend)
 	}
 }
 
-inline bool alocar_comp(compra * comp)
+inline bool alocar_comp()
 {
 	compra * tmpComp = (compra *)
 		realloc(comp, sizeof(compra)* (comp_sz + 1));
