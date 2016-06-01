@@ -1,3 +1,7 @@
+#ifndef _FUNCTIONS_H_
+#define _FUNCTIONS_H_
+
+
 /**********************************************************************
  * FUNÇÕES DO PROGRAMA petshop.c                                      *
  **********************************************************************/
@@ -6,24 +10,21 @@
  *                      DECLARAÇÕES DE VARIÁVEIS                       *
  *====================================================================*/
 
-#ifndef _FUNCTIONS_H_
-#define _FUNCTIONS_H_
+unsigned int n_produtos;
 
-extern unsigned int n_produtos;
+vendedor		* vende = (vendedor *)malloc(0);
+produto		* prod = (produto *)malloc(0);
+fornecedor	* forn = (fornecedor *)malloc(0);
+venda		* vend = (venda *)malloc(0);
+compra		* comp = (compra *)malloc(0);
 
-extern vendedor		* vende = (vendedor *)malloc(0);
-extern produto		* prod = (produto *)malloc(0);
-extern fornecedor	* forn = (fornecedor *)malloc(0);
-extern venda		* vend = (venda *)malloc(0);
-extern compra		* comp = (compra *)malloc(0);
+unsigned int vende_sz = 0;
+unsigned int prod_sz = 0;
+unsigned int forn_sz = 0;
+unsigned int vend_sz = 0;
+unsigned int comp_sz = 0;
 
-extern unsigned int vende_sz = 0;
-extern unsigned int prod_sz = 0;
-extern unsigned int forn_sz = 0;
-extern unsigned int vend_sz = 0;
-extern unsigned int comp_sz = 0;
 
-#endif
 
 /*====================================================================*
  *                      FUNÇÕES DE AUXILIARES                         *
@@ -65,7 +66,7 @@ inline char * receberString()
 	em caso de problemas
 */
 
-inline bool alocarVende(vendedor * vende)
+inline bool alocarVende()
 {
 	vendedor * tmpVende = (vendedor *)
 		realloc(vende, sizeof(vendedor) * (vende_sz+1));
@@ -192,3 +193,5 @@ void cadastrar_produto(PRODUTO * produto)
 
 
 /*--------------------------------------------------------------------*/
+
+#endif

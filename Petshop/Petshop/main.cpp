@@ -23,7 +23,7 @@ bool login()
 	if (vende_sz == 0)
 	{
 		//Testes de depuração
-		alocarVende(vende);
+		alocarVende();
 		
 		vende[0].salario = 666;
 		vende[0].numero = 1;
@@ -32,7 +32,7 @@ bool login()
 		vende[0].nome = receberString();
 		printf("%s", vende[0].nome);
 
-		alocarVende(vende);
+		alocarVende();
 
 		vende[1].nome = receberString();
 		printf("%s", vende[1].nome);
